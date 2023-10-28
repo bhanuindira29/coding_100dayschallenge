@@ -1,0 +1,12 @@
+class Solution:
+    def findTwoElement( self,arr, n):
+        expected=(n*(n+1))//2
+        expected_squares=(n*(n+1)*(2*n+1))//6
+        act=sum(arr)
+        act_sq=sum(x**2 for x in arr)
+        sd1=expected-act
+        sd2=expected_squares-act_sq
+        b=(sd1+(sd2//sd1))//2
+        a=b-sd1
+        return [a,b]
+        # code here
